@@ -38,7 +38,8 @@ public class Cliente {
             System.out.println("Aplicacion Walkie-Talkie iniciada, elija una opcion.");
             System.out.println("1.- Enviar Mensaje");
             System.out.println("2.- Recibir Mensaje");                
-                
+            System.out.println("3.- Salir");       
+            
             String opcion = sc.nextLine(); //Obtenemos la opcion elegida.
             	
            //SI LA OPCION ES 1 ENVIAMOS UN MENSAJE.
@@ -59,19 +60,26 @@ public class Cliente {
                     	System.out.println(mensajeRecibido + "\n");
                     	comunicacion = false;
                 	}
-
                 }
+            }   
+            
+            //SI LA OPCION ES 3 CERRAMOS EL PROGRAMA.
+            else if(opcion.equals("3")) {
+                System.out.println("Conexion finalizada, muchas gracias.\n");
+            	System.exit(0);
+            	
+            //SI NO ES NINGUNA DE LAS OTRAS OPCIONES DA ERROR.
             } else {
                 System.out.println("Entrada erronea, vuelve a intentarlo.\n");
+                }
             }
-    	  }
-            
     	  } catch(Exception e) {
             //System.out.println("Recibiendo del SERVIDOR: \n\t" + flujoEntrada.readUTF());
            e.printStackTrace();
             // CERRAR STREAMS Y SOCKETS
 
     	  } finally {
+    		  //FINALMENTE CERRAMOS TODAS LAS CONEXIONES EXISTENTES.
     		  try {
               flujoEntrada.close();
               flujoSalida.close();
