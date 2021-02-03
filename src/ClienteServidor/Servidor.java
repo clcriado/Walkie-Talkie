@@ -3,7 +3,13 @@ import java.io.*;
 import java.net.*;
 import java.util.Scanner;
 
-public class Ejemplo1Servidor {
+/**
+ * Clase Servidor, establece una conexión esperando al cliente remoto que se conecte,
+ * al realizar la conexion cuenta con dos opciones, enviar o recibir un mensaje.
+ * 
+ * @author Carlos
+ */
+public class Servidor {
      
       public static void main(String[] arg) {
           boolean conexion = true;
